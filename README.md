@@ -2,6 +2,9 @@
 
 
 * Unity Version: 2020.3.22f1
+* Import Oculus Intergration from the Assets Store
+* Import XR Plugins, click Oculus in PC and Android mode
+* Switch platform from PC to Android
 
 
 ## Update Code
