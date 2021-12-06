@@ -43,7 +43,7 @@ public class Accelerate : MonoBehaviour
 
         avatar.position -= new Vector3(0, 0, speed * Time.deltaTime);
 
-        print(speed);
+        //print(speed);
 
         // when the car reaches 80km/H -> enter the tunnel = 22.22 meters/second
 
