@@ -12,6 +12,11 @@ public class Accelerate : MonoBehaviour
 
     private float speed  = 0; // speed is the meter/second
 
+
+    public float K = 100; // Gain
+    public float T = 1; // Time Constant
+    private float input; // a(k)
+
     // our input is the rotation of the handler -> accelormeter -> speed 
 
     void Start()
@@ -19,29 +24,23 @@ public class Accelerate : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
 
-        //print(rightHandler.rotation.x);
-        // user push the accelerator
-        if (rightHandler.rotation.x > 0)
-        {
-            speed += 0.01f;
-        }
+        // to fetch controller button continuous ananlog value
+        input = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1];
+        print(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1]);
 
 
-        // user push the break
-        if (leftHandler.rotation.x > 0)
-        {
-            speed -= 0.01f;
 
-        }
 
+        speed = (1 / (T + Time.fixedDeltaTime)) * (T * speed + K * Time.fixedDeltaTime * input);
         // friction = speed *= 0.999
-        speed *= 0.999f;
+        //speed *= 0.999f;
+        print("Speed "+ speed);
 
-        avatar.position -= new Vector3(0, 0, speed * Time.deltaTime);
+        avatar.position -= new Vector3(0, 0, speed * Time.fixedDeltaTime);
 
         //print(speed);
 
