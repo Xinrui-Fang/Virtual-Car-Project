@@ -1315,7 +1315,7 @@ MonoBehaviour:
   leftSpotLight: {fileID: 617267568}
   rightSpotLight: {fileID: 334963830}
   avatar: {fileID: 1284087973}
-  speed: 60
+  speed: 80
 --- !u!114 &1432477919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,7 +1329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 2041812203}
-  speed: 20
+  avatar: {fileID: 1284087973}
+  speed: 80
 --- !u!1001 &1550782803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1343,7 +1344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05213b563a52a3c4a9c008b8bc7aa1fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.2421532
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05213b563a52a3c4a9c008b8bc7aa1fe, type: 3}
       propertyPath: m_LocalPosition.y

@@ -24,8 +24,8 @@ public class MoveLight : MonoBehaviour
         {
             if (leftSpotLight.transform.position.z < 540 + distance)
             {
-                leftSpotLight.transform.position = leftSpotLight.transform.position + new Vector3(0, 0, speed * Time.deltaTime);
-                rightSpotLight.transform.position = rightSpotLight.transform.position + new Vector3(0, 0, speed * Time.deltaTime);
+                leftSpotLight.transform.position = leftSpotLight.transform.position + new Vector3(0, 0, speed * Time.deltaTime / 3.6f);
+                rightSpotLight.transform.position = rightSpotLight.transform.position + new Vector3(0, 0, speed * Time.deltaTime / 3.6f);
             }
             else
             {

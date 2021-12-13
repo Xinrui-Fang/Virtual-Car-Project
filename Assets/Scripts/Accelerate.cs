@@ -25,7 +25,7 @@ public class Accelerate : MonoBehaviour
     private int counter = 0; // To check if the frames lost or not
 
    
-    private string path = @"C:\Users\super\Exports.csv";
+    private string path = @"C:\VRdata\test_minus.csv";
 
 
     // our input is the rotation of the handler -> accelormeter -> speed 
@@ -49,14 +49,14 @@ public class Accelerate : MonoBehaviour
         speed = (1 / (T + Time.fixedDeltaTime)) * (T * speed + K * Time.fixedDeltaTime * input);
         print(speed);
 
-        //Write2CSV(counter, input, speed); // write the variables into the .csv file
+        Write2CSV(counter, input, speed); // write the variables into the .csv file
         counter += 1; // itereate the counter
 
-        avatar.position += new Vector3(0, 0, speed * Time.fixedDeltaTime); // iterate the position of the user
-        UI.position += new Vector3(0, 0, speed * Time.fixedDeltaTime); // iterate the position of the speed panel
+        avatar.position += new Vector3(0, 0, speed * Time.fixedDeltaTime / 3.6f); // iterate the position of the user
+        UI.position += new Vector3(0, 0, speed * Time.fixedDeltaTime / 3.6f); // iterate the position of the speed panel
 
         // speed -> meters / second -> meters / hour -> KM / hour
-        Speed_panel.text = (speed * 3600 / 1000).ToString() + " KM/H";
+        Speed_panel.text = (speed).ToString() + " KM/H";
 
 
 
