@@ -13,8 +13,8 @@ public class Accelerate : MonoBehaviour
     private float speed  = 0; // speed is the meter/second
 
 
-    public float K = 100; // Gain
-    public float T = 1; // Time Constant
+    public float K = 100f; // Gain
+    public float T = 10f; // Time Constant
     private float input; // a(k)
 
     // our input is the rotation of the handler -> accelormeter -> speed 
@@ -40,7 +40,7 @@ public class Accelerate : MonoBehaviour
         //speed *= 0.999f;
         print("Speed "+ speed);
 
-        avatar.position -= new Vector3(0, 0, speed * Time.fixedDeltaTime);
+        avatar.position += new Vector3(0, 0, speed * Time.fixedDeltaTime);
 
         //print(speed);
 
