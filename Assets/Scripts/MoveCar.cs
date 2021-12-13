@@ -19,7 +19,7 @@ public class MoveCar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Car.transform.position.z < 540 + distance)
+        if (Car.transform.position.z < 500 + distance)
         {
             Car.transform.position = Car.transform.position + new Vector3(0, 0, speed * Time.deltaTime);
             //Car.transform.position = Car.transform.position + new Vector3(0, 0, speed * Time.deltaTime);

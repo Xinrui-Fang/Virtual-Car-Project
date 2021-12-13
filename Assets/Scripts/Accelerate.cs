@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
+using System.IO;
+using UnityEngine.UI;
 
 public class Accelerate : MonoBehaviour
 {
@@ -9,6 +12,8 @@ public class Accelerate : MonoBehaviour
     public Transform leftHandler;
 
     public Transform avatar;
+    public Transform UI;
+    public Text Speed_panel;
 
     private float speed  = 0; // speed is the meter/second
 
@@ -16,6 +21,12 @@ public class Accelerate : MonoBehaviour
     public float K = 100f; // Gain
     public float T = 10f; // Time Constant
     private float input; // a(k)
+
+    private int counter = 0; // To check if the frames lost or not
+
+   
+    private string path = @"C:\Users\super\Exports.csv";
+
 
     // our input is the rotation of the handler -> accelormeter -> speed 
 
@@ -36,16 +47,40 @@ public class Accelerate : MonoBehaviour
 
 
         speed = (1 / (T + Time.fixedDeltaTime)) * (T * speed + K * Time.fixedDeltaTime * input);
-        // friction = speed *= 0.999
-        //speed *= 0.999f;
-        // print("Speed "+ speed);
+        print(speed);
 
-        avatar.position += new Vector3(0, 0, speed * Time.fixedDeltaTime);
+        //Write2CSV(counter, input, speed); // write the variables into the .csv file
+        counter += 1; // itereate the counter
 
-        //print(speed);
+        avatar.position += new Vector3(0, 0, speed * Time.fixedDeltaTime); // iterate the position of the user
+        UI.position += new Vector3(0, 0, speed * Time.fixedDeltaTime); // iterate the position of the speed panel
+
+        // speed -> meters / second -> meters / hour -> KM / hour
+        Speed_panel.text = (speed * 3600 / 1000).ToString() + " KM/H";
+
+
+
 
         // when the car reaches 80km/H -> enter the tunnel = 22.22 meters/second
 
+    }
+
+    private void Write2CSV( int counter, float input, float speed)
+    {
+        StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8);
+        //open the file for recording//
+        if (!File.Exists(path))
+        {
+            File.Create(path).Close();
+        }
+
+        sw.Write(counter + ",");
+        sw.Write(input + ",");
+        sw.Write(speed + ",");
+
+        sw.Write("\r\n");
+        sw.Flush();
+        sw.Close();
     }
 
 
