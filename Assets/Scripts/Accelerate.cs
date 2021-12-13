@@ -30,7 +30,7 @@ public class Accelerate : MonoBehaviour
 
         // to fetch controller button continuous ananlog value
         input = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1];
-        print(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1]);
+        // print(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1]);
 
 
 
@@ -38,7 +38,7 @@ public class Accelerate : MonoBehaviour
         speed = (1 / (T + Time.fixedDeltaTime)) * (T * speed + K * Time.fixedDeltaTime * input);
         // friction = speed *= 0.999
         //speed *= 0.999f;
-        print("Speed "+ speed);
+        // print("Speed "+ speed);
 
         avatar.position += new Vector3(0, 0, speed * Time.fixedDeltaTime);
 
