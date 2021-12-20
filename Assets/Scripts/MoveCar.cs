@@ -9,12 +9,15 @@ public class MoveCar : MonoBehaviour
 
     public static float speed = 0;
 
+
     private float distance = 10 * 61;
 
     public float breaking_speed = 65f;
 
     public Light targetlight_left;
     public Light targetlight_right;
+
+    private float counter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,24 +29,28 @@ public class MoveCar : MonoBehaviour
     void FixedUpdate()
     {
         Car.transform.position += new Vector3(0, 0, speed * Time.fixedDeltaTime / 3.6f); // iterate the position of the car 0 -> 80
-        //print(speed);
+        print(speed);
 
-        if (speed < 80)
+        if (speed < 80 && counter <= 1200)
         {
-            speed += 0.05f;
-            print(speed);
+            speed += 0.08f;
+            //print(speed);
         }
 
-        if (Car.transform.position.z > 660)
+        if (counter >1200)
         {
-            breaking_speed = 65;
+            speed = breaking_speed;
             targetlight_left.color = Color.red;
             targetlight_right.color = Color.red;
         }
-        if (Car.transform.position.z > 700)
+        if (counter > 1300)
         {
             targetlight_left.color = Color.white;
             targetlight_right.color = Color.white;
         }
+
+        counter += 1;
+
+       
     }
 }
