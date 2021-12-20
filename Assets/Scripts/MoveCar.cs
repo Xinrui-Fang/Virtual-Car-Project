@@ -7,16 +7,19 @@ public class MoveCar : MonoBehaviour
     public GameObject Car; // Preceding Car
     public GameObject avatar; // User Avatar
 
-    private float speed = 0;
+    public static float speed = 0;
 
     private float distance = 10 * 61;
 
     public float breaking_speed = 65f;
 
+    public Light targetlight_left;
+    public Light targetlight_right;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -34,6 +37,13 @@ public class MoveCar : MonoBehaviour
         if (Car.transform.position.z > 660)
         {
             breaking_speed = 65;
+            targetlight_left.color = Color.red;
+            targetlight_right.color = Color.red;
+        }
+        if (Car.transform.position.z > 700)
+        {
+            targetlight_left.color = Color.white;
+            targetlight_right.color = Color.white;
         }
     }
 }

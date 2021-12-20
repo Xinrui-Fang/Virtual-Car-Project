@@ -49,7 +49,9 @@ public class Accelerate : MonoBehaviour
         speed = (1 / (T + Time.fixedDeltaTime)) * (T * speed + K * Time.fixedDeltaTime * input);
         //print(speed);
 
+        ///@ Save the .csv file here:
         //Write2CSV(counter, input, speed); // write the variables into the .csv file
+
         counter += 1; // itereate the counter
 
         avatar.position += new Vector3(0, 0, speed * Time.fixedDeltaTime / 3.6f); // iterate the position of the user
@@ -77,6 +79,7 @@ public class Accelerate : MonoBehaviour
         sw.Write(counter + ",");
         sw.Write(input + ",");
         sw.Write(speed + ",");
+        sw.Write(MoveCar.speed + ",");
 
         sw.Write("\r\n");
         sw.Flush();
