@@ -1,6 +1,8 @@
 # Virtual-Car-Project
 
 ## Set Up
+* Oculus2
+* Install Oculus PC software
 * Unity Version: 2020.3.22f1
 * Import Oculus Intergration from the Assets Store
 * Import XR Plugins, click Oculus in PC and Android mode
