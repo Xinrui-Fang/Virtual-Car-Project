@@ -34,7 +34,9 @@ public class MoveCar2 : MonoBehaviour
         
 
         Car.transform.position += new Vector3(0, 0, speed * Time.fixedDeltaTime / 3.6f); // iterate the position of the car 0 -> 80
-        print(speed);
+        //print(speed);
+        print(Accelerate.T);
+        print(Accelerate.K);
 
         if (speed < 80 && counter <= 1200)
         {
