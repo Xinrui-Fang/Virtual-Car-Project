@@ -726,11 +726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 500
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1394,6 +1394,7 @@ GameObject:
   - component: {fileID: 1432477917}
   - component: {fileID: 1432477918}
   - component: {fileID: 1432477919}
+  - component: {fileID: 1432477920}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1446,8 +1447,6 @@ MonoBehaviour:
   avatar: {fileID: 1284087978}
   UI: {fileID: 1140848588}
   Speed_panel: {fileID: 1140848589}
-  K: 100
-  T: 10
 --- !u!114 &1432477915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1474,7 +1473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tunnel: {fileID: 765979817}
-  max: 10
+  max: 15
 --- !u!114 &1432477917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,6 +1515,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc6c6fcf2061d774fa980005de7d7a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Car: {fileID: 2041812203}
+  avatar: {fileID: 1284087973}
+  breaking_speed: 65
+  targetlight_left: {fileID: 934215100}
+  targetlight_right: {fileID: 652320243}
+--- !u!114 &1432477920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432477911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb488fa7d6bed5b48923c1a350785950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 2041812203}

@@ -18,8 +18,8 @@ public class Accelerate : MonoBehaviour
     private float speed  = 0; // speed is the meter/second
 
 
-    public float K = 100f; // Gain
-    public float T = 10f; // Time Constant
+    public static float K = 100f; // Gain
+    public static float T = 10f; // Time Constant
     private float input; // a(k)
 
     private int counter = 0; // To check if the frames lost or not
@@ -33,6 +33,7 @@ public class Accelerate : MonoBehaviour
     void Start()
     {
         
+
     }
 
     void FixedUpdate()
@@ -50,7 +51,7 @@ public class Accelerate : MonoBehaviour
         //print(speed);
 
         ///@ Save the .csv file here:
-        Write2CSV(counter, input, speed); // write the variables into the .csv file
+        //Write2CSV(counter, input, speed); // write the variables into the .csv file
 
         counter += 1; // itereate the counter
 
