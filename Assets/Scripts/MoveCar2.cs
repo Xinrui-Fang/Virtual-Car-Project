@@ -40,7 +40,7 @@ public class MoveCar2 : MonoBehaviour
 
         if (speed < 80 && counter <= 1200)
         {
-            speed += 0.08f;
+            speed += 0.05f;
             //print(speed);
         }
 
