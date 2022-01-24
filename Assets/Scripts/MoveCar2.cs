@@ -29,20 +29,21 @@ public class MoveCar2 : MonoBehaviour
     void FixedUpdate()
     {
 
-        //speed = (1 / (T + Time.fixedDeltaTime)) * (T * speed + K * Time.fixedDeltaTime * input);
+        
 
         
 
         Car.transform.position += new Vector3(0, 0, speed * Time.fixedDeltaTime / 3.6f); // iterate the position of the car 0 -> 80
-        //print(speed);
-        print(Accelerate.T);
-        print(Accelerate.K);
+        
 
+        // Accelarote the speed
         if (speed < 80 && counter <= 1200)
         {
             speed += 0.05f;
-            //print(speed);
+            
         }
+
+        // Set countere manually to break down the speed of car, and turn to red light
 
         if (counter > 1200)
         {
@@ -51,6 +52,8 @@ public class MoveCar2 : MonoBehaviour
             targetlight_left.color = Color.red;
             targetlight_right.color = Color.red;
         }
+
+        // Turn to white light
         if (counter > 1300)
         {
             targetlight_left.color = Color.white;

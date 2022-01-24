@@ -15,7 +15,7 @@ public class Accelerate : MonoBehaviour
     public Transform UI;
     public Text Speed_panel;
 
-    private float speed  = 0; // speed is the meter/second
+    public static float speed  = 0; // speed is the meter/second
 
 
     public static float K = 100f; // Gain
@@ -42,10 +42,8 @@ public class Accelerate : MonoBehaviour
 
         // to fetch controller button continuous ananlog value
         input = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1];
-        // print(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1]);
-
-
-
+        //input = 0.5f;
+       
 
         speed = (1 / (T + Time.fixedDeltaTime)) * (T * speed + K * Time.fixedDeltaTime * input);
         //print(speed);
