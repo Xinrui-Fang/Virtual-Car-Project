@@ -12,7 +12,7 @@ public class MoveCar : MonoBehaviour
 
     private float distance = 10 * 61;
 
-    public float breaking_speed = 65f;
+    public float breaking_speed = 90f;
 
     public Light targetlight_left;
     public Light targetlight_right;
@@ -35,20 +35,19 @@ public class MoveCar : MonoBehaviour
         
 
         // Accelarote the speed of preceeding car to 80km/h
-        if (speed < 80)
+        if (speed < 80 && delta<5)
         {
-            speed += 0.08f;
+            speed += 0.04f;
             
         }
         else // if the speed of the vehicle ahead reaches 80 km/h
         {
-            speed = 80;
 
             // if 𝑑𝑒𝑙𝑡𝑎 < 𝐷𝑒𝑙𝑡𝑎 The preceding car continues to drive at 80 km/h
             if (delta < 5)
             {
                 // if your speed is in the range of [70, 90]
-                if (Accelerate.speed >= 80 - 10 && Accelerate.speed <= 80 + 10)
+                if (Accelerate_v2.speed >= 80 - 3 && Accelerate_v2.speed <= 80 + 3)
                 {
                     // 𝑑𝑒𝑙𝑡𝑎 += ∆𝑡
                     delta += Time.fixedDeltaTime; 
@@ -57,10 +56,12 @@ public class MoveCar : MonoBehaviour
                 {
                     delta = 0;
                 }
-            } else
+                speed = 80;
+            }
+            else
             {
                 // 𝑣𝑝𝑟𝑒=65 (km/h)
-                speed = 65; 
+                speed = 90; 
             }
             
         }

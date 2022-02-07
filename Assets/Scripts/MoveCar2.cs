@@ -12,7 +12,7 @@ public class MoveCar2 : MonoBehaviour
 
     private float distance = 10 * 61;
 
-    public float breaking_speed = 65f;
+    public float breaking_speed = 90f;
 
     public Light targetlight_left;
     public Light targetlight_right;
@@ -37,7 +37,7 @@ public class MoveCar2 : MonoBehaviour
         
 
         // Accelarote the speed
-        if (speed < 80 && counter <= 1200)
+        if (speed < 80 && counter <= 12000000)
         {
             speed += 0.05f;
             
@@ -45,7 +45,7 @@ public class MoveCar2 : MonoBehaviour
 
         // Set countere manually to break down the speed of car, and turn to red light
 
-        if (counter > 1200)
+        if (counter > 1000000)
         {
            // speed = breaking_speed;
             speed = (Accelerate.T * speed + Time.fixedDeltaTime * Accelerate.K * 0.65f) / (Accelerate.T + Time.fixedDeltaTime);
@@ -54,7 +54,7 @@ public class MoveCar2 : MonoBehaviour
         }
 
         // Turn to white light
-        if (counter > 1300)
+        if (counter > 13000000)
         {
             targetlight_left.color = Color.white;
             targetlight_right.color = Color.white;

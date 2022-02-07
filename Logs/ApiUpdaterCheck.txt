@@ -128,3 +128,43 @@ C# parse time         : 139ms
 candidates check time : 18ms
 console write time    : 0ms
 
+[api-updater (non-obsolete-error-filter)] 2022/02/05 14:19:32 : Starting C:/Users/inoue/OneDrive/デスクトップ/Unity Hub/2020.3.22f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 193.5001ms
+moved types parse time: 51ms
+candidates parse time : 1ms
+C# parse time         : 194ms
+candidates check time : 21ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 2022/02/05 14:21:03 : Starting C:/Users/inoue/OneDrive/デスクトップ/Unity Hub/2020.3.22f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 55.5042ms
+moved types parse time: 50ms
+candidates parse time : 8ms
+C# parse time         : 134ms
+candidates check time : 21ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 2022/02/05 14:22:03 : Starting C:/Users/inoue/OneDrive/デスクトップ/Unity Hub/2020.3.22f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 56.5069ms
+moved types parse time: 52ms
+candidates parse time : 8ms
+C# parse time         : 134ms
+candidates check time : 22ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 2022/02/05 14:22:15 : Starting C:/Users/inoue/OneDrive/デスクトップ/Unity Hub/2020.3.22f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 56ms
+moved types parse time: 48ms
+candidates parse time : 8ms
+C# parse time         : 128ms
+candidates check time : 21ms
+console write time    : 0ms
+

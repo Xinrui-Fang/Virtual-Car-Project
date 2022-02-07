@@ -25,7 +25,7 @@ public class Accelerate : MonoBehaviour
     private int counter = 0; // To check if the frames lost or not
 
    
-    private string path = @"C:\VRdata\takeda\preceding\100_10_1.csv";
+    private string path = @"C:\VRdata\takeda\preceding\test2.csv";
 
 
     // our input is the rotation of the handler -> accelormeter -> speed 
@@ -46,10 +46,10 @@ public class Accelerate : MonoBehaviour
        
 
         speed = (1 / (T + Time.fixedDeltaTime)) * (T * speed + K * Time.fixedDeltaTime * input);
-        //print(speed);
+        print(speed);
 
         ///@ Save the .csv file here:
-        //Write2CSV(counter, input, speed); // write the variables into the .csv file
+        Write2CSV(counter, input, speed); // write the variables into the .csv file
 
         counter += 1; // itereate the counter
 

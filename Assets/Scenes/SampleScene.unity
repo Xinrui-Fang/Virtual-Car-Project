@@ -239,7 +239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &334963831
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -530,7 +530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &617267569
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1389,12 +1389,12 @@ GameObject:
   - component: {fileID: 1432477913}
   - component: {fileID: 1432477912}
   - component: {fileID: 1432477916}
-  - component: {fileID: 1432477914}
   - component: {fileID: 1432477915}
-  - component: {fileID: 1432477917}
   - component: {fileID: 1432477918}
   - component: {fileID: 1432477919}
   - component: {fileID: 1432477920}
+  - component: {fileID: 1432477921}
+  - component: {fileID: 1432477922}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   road: {fileID: 385322475}
-  max: 120
+  max: 150
 --- !u!4 &1432477913
 Transform:
   m_ObjectHideFlags: 0
@@ -1430,23 +1430,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1432477914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1432477911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ae3b6d379d5f94b8b2eff7771186dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightHandler: {fileID: 893040151}
-  leftHandler: {fileID: 47747651}
-  avatar: {fileID: 1284087978}
-  UI: {fileID: 1140848588}
-  Speed_panel: {fileID: 1140848589}
 --- !u!114 &1432477915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,8 +1456,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tunnel: {fileID: 765979817}
-  max: 15
---- !u!114 &1432477917
+  max: 20
+--- !u!114 &1432477918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1483,28 +1466,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1432477911}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cbda8e3f812a2749956cbaf214c1605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftSpotLight: {fileID: 617267568}
-  rightSpotLight: {fileID: 334963830}
-  max: 40
---- !u!114 &1432477918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1432477911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16351da8b43931a44ac4742db56297f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftSpotLight: {fileID: 617267568}
   rightSpotLight: {fileID: 334963830}
   avatar: {fileID: 1284087973}
-  speed: 80
+  light_speed: 0
+  accele_light_speed: 90
 --- !u!114 &1432477919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,14 +1481,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432477911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc6c6fcf2061d774fa980005de7d7a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 2041812203}
   avatar: {fileID: 1284087973}
-  breaking_speed: 65
+  breaking_speed: 90
   targetlight_left: {fileID: 934215100}
   targetlight_right: {fileID: 652320243}
 --- !u!114 &1432477920
@@ -1529,16 +1498,49 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432477911}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb488fa7d6bed5b48923c1a350785950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 2041812203}
   avatar: {fileID: 1284087973}
-  breaking_speed: 65
+  breaking_speed: 70
   targetlight_left: {fileID: 934215100}
   targetlight_right: {fileID: 652320243}
+--- !u!114 &1432477921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432477911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d47f43dc3004e44a93df10ed915052c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHandler: {fileID: 893040151}
+  leftHandler: {fileID: 47747651}
+  avatar: {fileID: 1284087978}
+  UI: {fileID: 1140848588}
+  Speed_panel: {fileID: 1140848589}
+--- !u!114 &1432477922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432477911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85eefd32406fc44fb7b5353aae0ef03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftSpotLight: {fileID: 617267568}
+  rightSpotLight: {fileID: 334963830}
+  avatar: {fileID: 1284087973}
+  speed: 85
 --- !u!1001 &1550782803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1702,7 +1704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eb084a2dedafeb74cbd5c9cd291102c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 540
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eb084a2dedafeb74cbd5c9cd291102c9, type: 3}
       propertyPath: m_LocalRotation.w
