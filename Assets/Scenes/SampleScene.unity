@@ -823,7 +823,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354955599}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &354955602
 Camera:
   m_ObjectHideFlags: 0
@@ -1585,7 +1585,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809374560}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &809374563
 Camera:
   m_ObjectHideFlags: 0
@@ -2475,6 +2475,23 @@ PrefabInstance:
       objectReference: {fileID: -3246316449582152170, guid: 05213b563a52a3c4a9c008b8bc7aa1fe, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05213b563a52a3c4a9c008b8bc7aa1fe, type: 3}
+--- !u!1 &1775685510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 134650, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+  m_PrefabInstance: {fileID: 690346784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1775685511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775685510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e3fe8c4cdcf1b4ab0bc803f491d000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1804588914
 GameObject:
   m_ObjectHideFlags: 0

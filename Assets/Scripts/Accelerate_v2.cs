@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
@@ -43,19 +43,59 @@ public class Accelerate_v2 : MonoBehaviour
 
 
         // to fetch controller button continuous ananlog value
-        input = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1];
-        //input = 0.5f;
+        //input = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)[1]; // [-1, 1]
+        // Tilt Range we want is [0, 45]
+        // If Theta X>= 45, then Theta X = 45
+        // If Theta X < 0, then Theta X = 0
+        // input = Theta X / 45. 
+        
 
-        //samplingtime=Time.fixedDeltaTime;
-        //u=input;
+        // Acceleromter
+        if(rightHandler.localEulerAngles.x < 250)
+        {
+            input = rightHandler.localEulerAngles.x;
+
+            if (input > 45 && input < 90)
+            {
+                input = 45;
+                StartCoroutine(Vivration(0.1f, 1f, 0));
+            }
+            else
+            {
+                StartCoroutine(Vivration(0.1f, 0.2f, 0));
+            }
+        }
+
+        // Break
+
+        if (leftHandler.localEulerAngles.x < 250)
+        {
+            input = -leftHandler.localEulerAngles.x;
+
+            if (input > 45 && input < 90)
+            {
+                input = -45;
+                StartCoroutine(Vivration(0.1f, 1f, 1));
+            }
+            else
+            {
+                StartCoroutine(Vivration(0.1f, 0.2f, 1));
+            }
+        }
+
+
+        input = input / 45;
+        
+        
+
 
         speed_pre2 = speed_pre;
         speed_pre = speed;
         speed = (Time.fixedDeltaTime*Time.fixedDeltaTime* K / T) * input + ((2 * T - Time.fixedDeltaTime) / T) * speed_pre - ((T - Time.fixedDeltaTime) / T) * speed_pre2;
-        print(speed);
+        //print(speed);
 
         ///@ Save the .csv file here:
-        Write2CSV(counter, input, speed); // write the variables into the .csv file
+        //Write2CSV(counter, input, speed); // write the variables into the .csv file
 
         counter += 1; // itereate the counter
 
@@ -89,6 +129,31 @@ public class Accelerate_v2 : MonoBehaviour
         sw.Write("\r\n");
         sw.Flush();
         sw.Close();
+    }
+
+    IEnumerator Vivration(float time, float amplitude, int handlerNumber)
+    {
+
+
+        if (handlerNumber == 0)
+        {
+            OVRInput.SetControllerVibration(0.51f, amplitude, OVRInput.Controller.RTouch);
+
+            yield return new WaitForSeconds(time);
+
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+        }
+        else
+        {
+            OVRInput.SetControllerVibration(0.51f, amplitude, OVRInput.Controller.LTouch);
+
+            yield return new WaitForSeconds(time);
+
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
+        }
+        
+
+
     }
 
 
