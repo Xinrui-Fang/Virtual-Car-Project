@@ -461,35 +461,35 @@ if strcmp(userChoice, 'All')
     t_pml = 5:ts:(i_off-1)*ts;
     
     %withPML
-    figure('Position', [0 0 700 450], 'Color', 'white'); % powerpoint 図の横サイズ700，縦サイズ450
+    figure('Position', [0 0 700 450], 'Color', 'white'); 
     hold on
-    plot(0:ts:20,V0neo, 'r-', 'LineWidth', lineWidth); % plot(横，縦，線の色とタイプ，線の太さ)
+    plot(0:ts:20,V0neo, 'r-', 'LineWidth', lineWidth); 
     for i = 1:10
-    plot(0:ts:20,V(:,i), 'k-', 'LineWidth', 1); % plot(横，縦，線の色とタイプ，線の太さ)
+    plot(0:ts:20,V(:,i), 'k-', 'LineWidth', 1); 
     end
-    xlabel({'$t[\rm{s}]$'}, 'interpreter', 'latex');  % 横軸のラベル
+    xlabel({'$t[\rm{s}]$'}, 'interpreter', 'latex');  
     ylabel({'$v[\rm{km/h}]$'}, 'interpreter', 'latex');
-    ax = gca; % 座標軸のプロパティの取得
+    ax = gca; 
     xlim([0 20])
     ylim([65 90])
     xticks([0:5:20])
     yticks([65:5:90])
-    grid on % グリッドの表示
+    grid on 
     box on
     legend('$v_{\rm{pv}}$','$v$(with)','interpreter','latex')
     legend('Location','best')
-    set(gca, 'FontName',fontName,'FontSize', fontSize); % 軸のフォントの字体・サイズの設定
+    set(gca, 'FontName',fontName,'FontSize', fontSize); 
     
     %without PML
-    figure('Position', [0 0 700 450], 'Color', 'white'); % powerpoint 図の横サイズ700，縦サイズ450
+    figure('Position', [0 0 700 450], 'Color', 'white'); 
     hold on
-    plot(0:ts:20,V0neo, 'r-', 'LineWidth', lineWidth); % plot(横，縦，線の色とタイプ，線の太さ)
+    plot(0:ts:20,V0neo, 'r-', 'LineWidth', lineWidth); 
     for i = 1:10
-    plot(0:ts:20,Vnon(:,i), 'k-', 'LineWidth', 1); % plot(横，縦，線の色とタイプ，線の太さ)
+    plot(0:ts:20,Vnon(:,i), 'k-', 'LineWidth', 1); 
     end
-    xlabel({'$t[\rm{s}]$'}, 'interpreter', 'latex');  % 横軸のラベル
+    xlabel({'$t[\rm{s}]$'}, 'interpreter', 'latex');  
     ylabel({'$v[\rm{km/h}]$'}, 'interpreter', 'latex');
-    ax = gca; % 座標軸のプロパティの取得
+    ax = gca; 
     xlim([0 20])
     ylim([65 90])
     xticks([0:5:20])
@@ -498,27 +498,27 @@ if strcmp(userChoice, 'All')
     box on
     legend('$v_{\rm{pv}}$','$v$(without)','interpreter','latex')
     legend('Location','best')
-    set(gca, 'FontName',fontName,'FontSize', fontSize); % 軸のフォントの字体・サイズの設定
+    set(gca, 'FontName',fontName,'FontSize', fontSize); 
     
     %Worst case
-    figure('Position', [0 0 700 450], 'Color', 'white'); % powerpoint 図の横サイズ700，縦サイズ450
+    figure('Position', [0 0 700 450], 'Color', 'white'); 
     hold on
-    plot(0:ts:20,V0neo, 'r-', 'LineWidth', lineWidth); % plot(横，縦，線の色とタイプ，線の太さ)
-    plot(0:ts:20,V(:,I), 'k-', 'LineWidth', 3); % plot(横，縦，線の色とタイプ，線の太さ)
-    plot(0:ts:20,Vnon(:,I), 'k-.', 'LineWidth', 3); % plot(横，縦，線の色とタイプ，線の太さ)
+    plot(0:ts:20,V0neo, 'r-', 'LineWidth', lineWidth); 
+    plot(0:ts:20,V(:,I), 'k-', 'LineWidth', 3); 
+    plot(0:ts:20,Vnon(:,I), 'k-.', 'LineWidth', 3); 
     plot(t_pml,V_pml,'g-.', 'LineWidth', 3)
-    xlabel({'$t[\rm{s}]$'}, 'interpreter', 'latex');  % 横軸のラベル
+    xlabel({'$t[\rm{s}]$'}, 'interpreter', 'latex');  
     ylabel({'$v[\rm{km/h}]$'}, 'interpreter', 'latex');
-    ax = gca; % 座標軸のプロパティの取得
+    ax = gca; 
     xlim([0 20])
     ylim([65 90])
     xticks([0:5:20])
     yticks([65:5:90])
-    grid on % グリッドの表示
+    grid on 
     box on
     legend('$v_{\rm{pv}}$','$v$(with)','$v$(without)','$v_{\rm{pml}}$','interpreter','latex')
     legend('Location','best')
-    set(gca, 'FontName',fontName,'FontSize', fontSize); % 軸のフォントの字体・サイズの設定
+    set(gca, 'FontName',fontName,'FontSize', fontSize); 
 
 elseif strcmp(userChoice, 'Each')
    
@@ -541,25 +541,25 @@ elseif strcmp(userChoice, 'Each')
     t_pml = 5:ts:(i_off-1)*ts;
     
     %Selected driver
-    figure('Position', [0 0 700 450], 'Color', 'white'); % powerpoint 図の横サイズ700，縦サイズ450
+    figure('Position', [0 0 700 450], 'Color', 'white'); 
     hold on
-    plot(0:ts:20,V0neo, 'r-', 'LineWidth', lineWidth); % plot(横，縦，線の色とタイプ，線の太さ)
-    plot(0:ts:20,V(:,Drivernumber), 'k-', 'LineWidth', 3); % plot(横，縦，線の色とタイプ，線の太さ)
+    plot(0:ts:20,V0neo, 'r-', 'LineWidth', lineWidth); 
+    plot(0:ts:20,V(:,Drivernumber), 'k-', 'LineWidth', 3); 
     plot(t_pml,V_pml,'g-.', 'LineWidth', 3)
-    xlabel({'$t[\rm{s}]$'}, 'interpreter', 'latex');  % 横軸のラベル
+    xlabel({'$t[\rm{s}]$'}, 'interpreter', 'latex');  
     ylabel({'$v[\rm{km/h}]$'}, 'interpreter', 'latex');
-    ax = gca; % 座標軸のプロパティの取得
+    ax = gca; 
     xlim([0 20])
     ylim([65 90])
     xticks([0:5:20])
     yticks([65:5:90])
-    grid on % グリッドの表示
+    grid on 
     box on
     legend('$v_{\rm{pv}}$','$v$(with)','$v_{\rm{pml}}$','interpreter','latex')
     legend('Location','best')
-    set(gca, 'FontName',fontName,'FontSize', fontSize); % 軸のフォントの字体・サイズの設定
+    set(gca, 'FontName',fontName,'FontSize', fontSize); 
 
 else
     disp('Invalid selection, please select Robust or Select.');
 end
-%% EOF_of_neoplant_compare_MPC_RBF_0210_L1.m
+%% EOF
