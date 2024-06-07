@@ -155,7 +155,7 @@ for q = 1:1
         zpre(d-i) = zpre(d-i+1) - ts*vpre(d-i+1)/3.6;
     end
     
-    % 0台目
+    % 0th vehicle
     v0pre = v1*ones(dm,1);
     z0pre = z0*ones(dm,1);
     for i = 1:dm-1
