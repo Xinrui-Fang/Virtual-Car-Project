@@ -22,7 +22,7 @@ uncontroll_datanumber = 25;%Number of experimental data without PML
 %-----------------%
       %Time%
 %------------------%
-ts = 0.02;%Unity内のサンプリング時間
+ts = 0.02;%sampling time in Unity
 ts2 = 0.2;
 T = 15;
 NT = T/ts;
@@ -129,7 +129,7 @@ for o = 1:controll_datanumber
     z_relative = z_pre - z;
     v_relative = v_pre(1:N) - v(1:N);
     
-    %各定数(座標系)
+    %parameter
     l_pre = 1.4;%[m]
     
     % RMSE
@@ -250,7 +250,7 @@ hold on
 for i = 1:controll_datanumber
     plot(t_neo,V_pml(:,i), 'k', 'LineWidth', lineWidth); 
 end
-grid on % グリッドの表示
+grid on 
 box on
 xlim([0 T])
 xticks([0:5:T])
